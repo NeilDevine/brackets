@@ -112,8 +112,8 @@ define(function (require, exports, module) {
     /** Add all the given tickmarks to the DOM in a batch */
     function _renderMarks(posArray) {
         var html = "",
-            editorHt = $(editor.getRootElement()).find(".CodeMirror-scroll > .CodeMirror-sizer").height(),
-            cm = editor._codeMirror;
+            cm = editor._codeMirror,
+            editorHt = cm.getScrollerElement().scrollHeight;
 
         // We've pretty much taken these vars and the getY function from CodeMirror's annotatescrollbar addon
         // https://github.com/codemirror/CodeMirror/blob/master/addon/scroll/annotatescrollbar.js
